@@ -2,4 +2,5 @@ services:
   app:
     volumes:
       - .:/workspace
+      - /workspace/.pnpm-store
       - /workspace/node_modules
