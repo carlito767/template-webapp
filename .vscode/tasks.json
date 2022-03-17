@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🚀 Release",
+      "command": "pnpm",
+      "args": [
+        "run",
+        "release",
+        "--",
+        "--skip.commit",
+        "--skip.tag",
+      ]
+    }
+  ]
+}
