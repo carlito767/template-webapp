@@ -1,0 +1,5 @@
+services:
+  app:
+    volumes:
+      - .:/workspace
+      - /workspace/node_modules
