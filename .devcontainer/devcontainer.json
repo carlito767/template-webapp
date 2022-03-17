@@ -10,6 +10,7 @@
   "workspaceFolder": "/workspace",
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
+    "actboy168.tasks",
     "mhutchie.git-graph",
     "vivaxy.vscode-conventional-commits",
   ],
