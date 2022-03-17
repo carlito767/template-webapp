@@ -11,6 +11,7 @@
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+  "git.followTagsWhenSync": true,
   "[markdown]": {
     "files.trimTrailingWhitespace": false
   },

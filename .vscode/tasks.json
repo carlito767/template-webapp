@@ -7,9 +7,6 @@
       "args": [
         "run",
         "release",
-        "--",
-        "--skip.commit",
-        "--skip.tag",
       ]
     }
   ]
