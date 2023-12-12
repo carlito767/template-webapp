@@ -1,15 +1,26 @@
-FROM node:16.14.0-buster
+FROM node:20.10.0-buster
 
+# Args
+ARG PNPM_VERSION=8.12.0
+
+# Envs
+ENV PNPM_VERSION=${PNPM_VERSION}
+ENV PNPM_HOME=/usr/local/bin
+
+# Set working directory
 WORKDIR /workspace
 
-# Instal pnpm
-RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm && \
-  pnpm config set store-dir .pnpm-store
+# Copy configuration files
+COPY .npmrc package.json pnpm-lock.yaml ./
 
-# Fetch packages from lockfile into virtual store, package manifest is ignored
-COPY .npmrc pnpm-lock*.yaml ./
-RUN pnpm fetch
+# Update npm
+RUN npm i -g npm@latest && \
+  # Install pnpm
+  npm install -g pnpm@$PNPM_VERSION && \
+  # Configure pnpm store
+  pnpm config set store-dir .pnpm-store && \
+  # Install dependencies
+  pnpm install --frozen-lockfile
 
-# Copy project files and install dependencies from virtual store
+# Copy project files
 COPY . ./
-RUN pnpm install -r --offline
