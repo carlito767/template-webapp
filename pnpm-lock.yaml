@@ -8,9 +8,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: 16.2.1
     version: 16.2.1
-  standard-version:
-    specifier: 9.3.2
-    version: 9.3.2
+  commit-and-tag-version:
+    specifier: 12.0.0
+    version: 12.0.0
 
 packages:
 
@@ -142,6 +142,15 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
+  /cliui@8.0.1:
+    resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
+      wrap-ansi: 7.0.0
+    dev: true
+
   /color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
     dependencies:
@@ -161,6 +170,26 @@ packages:
 
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+    dev: true
+
+  /commit-and-tag-version@12.0.0:
+    resolution: {integrity: sha512-ynzs3Zojw3Z0hyBuA4prkDUvfODRUoqbsk7RFpFc28I12vXxhrAv+N5/9W4O0htdi9sxL6xvzxozXUapBeGXTQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      chalk: 2.4.2
+      conventional-changelog: 3.1.25
+      conventional-changelog-config-spec: 2.1.0
+      conventional-changelog-conventionalcommits: 6.1.0
+      conventional-recommended-bump: 7.0.1
+      detect-indent: 6.1.0
+      detect-newline: 3.1.0
+      dotgitignore: 2.1.0
+      figures: 3.2.0
+      find-up: 5.0.0
+      git-semver-tags: 5.0.1
+      semver: 7.5.4
+      yargs: 17.7.2
     dev: true
 
   /compare-func@2.0.0:
@@ -210,15 +239,6 @@ packages:
     resolution: {integrity: sha512-IpVePh16EbbB02V+UA+HQnnPIohgXvJRxHcS5+Uwk4AT5LjzCZJm5sp/yqs5C6KZJ1jMsV4paEV13BN1pvDuxQ==}
     dev: true
 
-  /conventional-changelog-conventionalcommits@4.6.1:
-    resolution: {integrity: sha512-lzWJpPZhbM1R0PIzkwzGBCnAkH5RKJzJfFQZcl/D+2lsJxAwGnDKBqn/F4C1RD31GJNn8NuKWQzAZDAVXPp2Mw==}
-    engines: {node: '>=10'}
-    dependencies:
-      compare-func: 2.0.0
-      lodash: 4.17.21
-      q: 1.5.1
-    dev: true
-
   /conventional-changelog-conventionalcommits@4.6.3:
     resolution: {integrity: sha512-LTTQV4fwOM4oLPad317V/QNQ1FY4Hju5qeBIM1uTHbrnCE+Eg4CdRZ3gO2pUeR+tzWdp80M2j3qFFEDWVqOV4g==}
     engines: {node: '>=10'}
@@ -226,6 +246,13 @@ packages:
       compare-func: 2.0.0
       lodash: 4.17.21
       q: 1.5.1
+    dev: true
+
+  /conventional-changelog-conventionalcommits@6.1.0:
+    resolution: {integrity: sha512-3cS3GEtR78zTfMzk0AizXKKIdN4OvSh7ibNz6/DPbhWWQu7LqE/8+/GqSodV+sywUR2gpJAdP/1JFf4XtN7Zpw==}
+    engines: {node: '>=14'}
+    dependencies:
+      compare-func: 2.0.0
     dev: true
 
   /conventional-changelog-core@4.2.4:
@@ -289,6 +316,11 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /conventional-changelog-preset-loader@3.0.0:
+    resolution: {integrity: sha512-qy9XbdSLmVnwnvzEisjxdDiLA4OmV3o8db+Zdg4WiFw14fP3B6XNz98X0swPPpkTd/pc1K7+adKgEDM1JCUMiA==}
+    engines: {node: '>=14'}
+    dev: true
+
   /conventional-changelog-writer@5.0.1:
     resolution: {integrity: sha512-5WsuKUfxW7suLblAbFnxAcrvf6r+0b7GvNaWUwUIk0bXMnENP/PEieGKVUQrjPqwPT4o3EPAASBXiY6iHooLOQ==}
     engines: {node: '>=10'}
@@ -305,14 +337,14 @@ packages:
       through2: 4.0.2
     dev: true
 
-  /conventional-changelog@3.1.24:
-    resolution: {integrity: sha512-ed6k8PO00UVvhExYohroVPXcOJ/K1N0/drJHx/faTH37OIZthlecuLIRX/T6uOp682CAoVoFpu+sSEaeuH6Asg==}
+  /conventional-changelog@3.1.25:
+    resolution: {integrity: sha512-ryhi3fd1mKf3fSjbLXOfK2D06YwKNic1nC9mWqybBHdObPd8KJ2vjaXZfYj1U23t+V8T8n0d7gwnc9XbIdFbyQ==}
     engines: {node: '>=10'}
     dependencies:
       conventional-changelog-angular: 5.0.13
       conventional-changelog-atom: 2.0.8
       conventional-changelog-codemirror: 2.0.8
-      conventional-changelog-conventionalcommits: 4.6.1
+      conventional-changelog-conventionalcommits: 4.6.3
       conventional-changelog-core: 4.2.4
       conventional-changelog-ember: 2.0.9
       conventional-changelog-eslint: 3.0.9
@@ -325,6 +357,14 @@ packages:
   /conventional-commits-filter@2.0.7:
     resolution: {integrity: sha512-ASS9SamOP4TbCClsRHxIHXRfcGCnIoQqkvAzCSbZzTFLfcTqJVugB0agRgsEELsqaeWgsXv513eS116wnlSSPA==}
     engines: {node: '>=10'}
+    dependencies:
+      lodash.ismatch: 4.4.0
+      modify-values: 1.0.1
+    dev: true
+
+  /conventional-commits-filter@3.0.0:
+    resolution: {integrity: sha512-1ymej8b5LouPx9Ox0Dw/qAO2dVdfpRFq28e5Y0jJEU8ZrLdy0vOSkkIInwmxErFGhg6SALro60ZrwYFVTUDo4Q==}
+    engines: {node: '>=14'}
     dependencies:
       lodash.ismatch: 4.4.0
       modify-values: 1.0.1
@@ -343,19 +383,29 @@ packages:
       through2: 4.0.2
     dev: true
 
-  /conventional-recommended-bump@6.1.0:
-    resolution: {integrity: sha512-uiApbSiNGM/kkdL9GTOLAqC4hbptObFo4wW2QRyHsKciGAfQuLU1ShZ1BIVI/+K2BE/W1AWYQMCXAsv4dyKPaw==}
-    engines: {node: '>=10'}
+  /conventional-commits-parser@4.0.0:
+    resolution: {integrity: sha512-WRv5j1FsVM5FISJkoYMR6tPk07fkKT0UodruX4je86V4owk451yjXAKzKAPOs9l7y59E2viHUS9eQ+dfUA9NSg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      JSONStream: 1.3.5
+      is-text-path: 1.0.1
+      meow: 8.1.2
+      split2: 3.2.2
+    dev: true
+
+  /conventional-recommended-bump@7.0.1:
+    resolution: {integrity: sha512-Ft79FF4SlOFvX4PkwFDRnaNiIVX7YbmqGU0RwccUaiGvgp3S0a8ipR2/Qxk31vclDNM+GSdJOVs2KrsUCjblVA==}
+    engines: {node: '>=14'}
     hasBin: true
     dependencies:
       concat-stream: 2.0.0
-      conventional-changelog-preset-loader: 2.3.4
-      conventional-commits-filter: 2.0.7
-      conventional-commits-parser: 3.2.4
-      git-raw-commits: 2.0.11
-      git-semver-tags: 4.1.1
+      conventional-changelog-preset-loader: 3.0.0
+      conventional-commits-filter: 3.0.0
+      conventional-commits-parser: 4.0.0
+      git-raw-commits: 3.0.0
+      git-semver-tags: 5.0.1
       meow: 8.1.2
-      q: 1.5.1
     dev: true
 
   /core-util-is@1.0.3:
@@ -466,13 +516,6 @@ packages:
       path-exists: 4.0.0
     dev: true
 
-  /fs-access@1.0.1:
-    resolution: {integrity: sha512-05cXDIwNbFaoFWaz5gNHlUTbH5whiss/hr/ibzPd4MH3cR4w0ZKeIPiVdbyJurg3O5r/Bjpvn9KOb1/rPMf3nA==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      null-check: 1.0.0
-    dev: true
-
   /function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
     dev: true
@@ -505,6 +548,16 @@ packages:
       through2: 4.0.2
     dev: true
 
+  /git-raw-commits@3.0.0:
+    resolution: {integrity: sha512-b5OHmZ3vAgGrDn/X0kS+9qCfNKWe4K/jFnhwzVWWg0/k5eLa3060tZShrRg8Dja5kPc+YjS0Gc6y7cRr44Lpjw==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      dargs: 7.0.0
+      meow: 8.1.2
+      split2: 3.2.2
+    dev: true
+
   /git-remote-origin-url@2.0.0:
     resolution: {integrity: sha512-eU+GGrZgccNJcsDH5LkXR3PB9M958hxc7sbA8DFJjrv9j4L2P/eZfKhM+QD6wyzpiv+b1BpK0XrYCxkovtjSLw==}
     engines: {node: '>=4'}
@@ -520,6 +573,15 @@ packages:
     dependencies:
       meow: 8.1.2
       semver: 6.3.1
+    dev: true
+
+  /git-semver-tags@5.0.1:
+    resolution: {integrity: sha512-hIvOeZwRbQ+7YEUmCkHqo8FOLQZCEn18yevLHADlFPZY02KJGsu5FZt9YW/lybfK2uhWFI7Qg/07LekJiTv7iA==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      meow: 8.1.2
+      semver: 7.5.4
     dev: true
 
   /gitconfiglocal@1.0.0:
@@ -784,11 +846,6 @@ packages:
       is-core-module: 2.13.1
       semver: 7.5.4
       validate-npm-package-license: 3.0.4
-    dev: true
-
-  /null-check@1.0.0:
-    resolution: {integrity: sha512-j8ZNHg19TyIQOWCGeeQJBuu6xZYIEurf8M1Qsfd8mFrGEfIZytbw18YjKWg+LcO25NowXGZXZpKAx+Ui3TFfDw==}
-    engines: {node: '>=0.10.0'}
     dev: true
 
   /p-limit@1.3.0:
@@ -1057,29 +1114,6 @@ packages:
       through: 2.3.8
     dev: true
 
-  /standard-version@9.3.2:
-    resolution: {integrity: sha512-u1rfKP4o4ew7Yjbfycv80aNMN2feTiqseAhUhrrx2XtdQGmu7gucpziXe68Z4YfHVqlxVEzo4aUA0Iu3VQOTgQ==}
-    engines: {node: '>=10'}
-    deprecated: standard-version is deprecated. If you're a GitHub user, I recommend https://github.com/googleapis/release-please as an alternative.
-    hasBin: true
-    dependencies:
-      chalk: 2.4.2
-      conventional-changelog: 3.1.24
-      conventional-changelog-config-spec: 2.1.0
-      conventional-changelog-conventionalcommits: 4.6.1
-      conventional-recommended-bump: 6.1.0
-      detect-indent: 6.1.0
-      detect-newline: 3.1.0
-      dotgitignore: 2.1.0
-      figures: 3.2.0
-      find-up: 5.0.0
-      fs-access: 1.0.1
-      git-semver-tags: 4.1.1
-      semver: 7.5.4
-      stringify-package: 1.0.1
-      yargs: 16.2.0
-    dev: true
-
   /string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
     engines: {node: '>=8'}
@@ -1099,11 +1133,6 @@ packages:
     resolution: {integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==}
     dependencies:
       safe-buffer: 5.2.1
-    dev: true
-
-  /stringify-package@1.0.1:
-    resolution: {integrity: sha512-sa4DUQsYciMP1xhKWGuFM04fB0LG/9DlluZoSVywUMRNvzid6XucHK0/90xGxRoHrAaROrcHK1aPKaijCtSrhg==}
-    deprecated: This module is not used anymore, and has been replaced by @npmcli/package-json
     dev: true
 
   /strip-ansi@6.0.1:
@@ -1234,6 +1263,11 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /yargs-parser@21.1.1:
+    resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
+    engines: {node: '>=12'}
+    dev: true
+
   /yargs@16.2.0:
     resolution: {integrity: sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==}
     engines: {node: '>=10'}
@@ -1245,6 +1279,19 @@ packages:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 20.2.9
+    dev: true
+
+  /yargs@17.7.2:
+    resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
+    engines: {node: '>=12'}
+    dependencies:
+      cliui: 8.0.1
+      escalade: 3.1.1
+      get-caller-file: 2.0.5
+      require-directory: 2.1.1
+      string-width: 4.2.3
+      y18n: 5.0.8
+      yargs-parser: 21.1.1
     dev: true
 
   /yocto-queue@0.1.0:

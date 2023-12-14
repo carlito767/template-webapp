@@ -3,10 +3,10 @@
   "version": "1.0.0-alpha.0",
   "private": true,
   "scripts": {
-    "release": "standard-version"
+    "release": "commit-and-tag-version"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "16.2.1",
-    "standard-version": "9.3.2"
+    "commit-and-tag-version": "12.0.0"
   }
 }
