@@ -3,11 +3,8 @@
   "tasks": [
     {
       "label": "🚀 Release",
-      "command": "pnpm",
-      "args": [
-        "run",
-        "release",
-      ]
+      "type": "shell",
+      "command": "pnpm run release && git push --follow-tags origin main",
     }
   ]
 }
